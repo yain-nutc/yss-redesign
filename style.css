@@ -84,7 +84,7 @@ img { max-width:100%; display:block; }
 
 /* 真實公司 Logo 圖片 */
 .logo-img {
-  height: 26px; /* 縮小以符合原站比例 */
+  height: 32px; /* 稍微放大以讓文字清晰 */
   width: auto;
   display: block;
   object-fit: contain;

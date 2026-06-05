@@ -78,13 +78,13 @@ img { max-width:100%; display:block; }
   min-height: 66px;
   flex-shrink: 0;
   transition: var(--transition);
-  gap: 12px;
+  gap: 8px; /* 縮小與文字間距 */
 }
 .nav-logo:hover { background: var(--orange-light); }
 
 /* 真實公司 Logo 圖片 */
 .logo-img {
-  height: 40px;
+  height: 26px; /* 縮小以符合原站比例 */
   width: auto;
   display: block;
   object-fit: contain;

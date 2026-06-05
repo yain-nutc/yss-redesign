@@ -74,27 +74,22 @@ img { max-width:100%; display:block; }
   align-items: center;
   background: var(--orange);
   border-bottom: 5px solid var(--orange-dark);
-  padding: 0 24px;
+  padding: 0 20px;
   min-height: 66px;
   flex-shrink: 0;
   transition: var(--transition);
-  gap: 10px;
+  gap: 12px;
 }
 .nav-logo:hover { background: var(--orange-light); }
 
-.logo-icon-box {
-  width: 36px;
-  height: 36px;
-  background: var(--blue-dark);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--orange);
+/* 真實公司 Logo 圖片 */
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* 橘底上保持白色 */
   flex-shrink: 0;
-  letter-spacing: 0;
 }
 
 .logo-text-wrap { line-height: 1.2; }

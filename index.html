@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="永興證券 — 您值得信賴的投資夥伴。提供股票、期貨、基金等完整金融服務，為您的財富保駕護航。">
+  <meta name="keywords" content="永興證券,YSS,股票交易,期貨,證券開戶,台灣股市">
+  <meta property="og:title" content="永興證券 | 永興 e 證券">
+  <meta property="og:description" content="永興證券 — 您值得信賴的投資夥伴">
+  <meta property="og:type" content="website">
+  <title>永興證券 | 永興 e 證券</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
+        <div class="logo-icon">
+          <span class="logo-char">永</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">永興證券</span>
+          <span class="logo-sub">YSS Securities</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html" class="nav-link" id="nav-about">關於永興</a></li>
+        <li><a href="news.html" class="nav-link" id="nav-news">最新消息</a></li>
+        <li><a href="https://www.twse.com.tw/zh/trading/historical/mi-stock20.html" target="_blank" class="nav-link" id="nav-stock">股市資訊</a></li>
+        <li><a href="trade-ranking.html" class="nav-link" id="nav-trade">交易排行</a></li>
+        <li><a href="links.html" class="nav-link" id="nav-links-page">相關連結</a></li>
+        <li><a href="mailto:service@yss.com.tw" class="nav-link nav-cta" id="nav-contact">
+          <i class="fas fa-envelope"></i> 客服信箱
+        </a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mob-about">關於永興</a></li>
+      <li><a href="news.html" id="mob-news">最新消息</a></li>
+      <li><a href="https://www.twse.com.tw" target="_blank" id="mob-stock">股市資訊</a></li>
+      <li><a href="trade-ranking.html" id="mob-trade">交易排行</a></li>
+      <li><a href="links.html" id="mob-links">相關連結</a></li>
+      <li><a href="mailto:service@yss.com.tw" id="mob-contact">客服信箱</a></li>
+      <li><a href="privacy.html" id="mob-privacy">隱私權保護</a></li>
+      <li><a href="develop.html" id="mob-develop">永續發展專區</a></li>
+      <li><a href="antifraud.html" id="mob-antifraud">反詐騙專區</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-shield-halved"></i>
+        <span>安全可靠的金融夥伴</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-line1">永興證券</span>
+        <span class="hero-title-line2">您值得信賴的<br>投資夥伴</span>
+      </h1>
+      <p class="hero-desc">
+        深耕台灣資本市場數十年，提供股票、期貨、基金等全方位金融服務<br>
+        讓您的財富穩健增值，每一步都有我們陪伴
+      </p>
+      <div class="hero-actions">
+        <a href="about.html" class="btn-primary" id="hero-btn-open">
+          <i class="fas fa-user-plus"></i> 了解更多
+        </a>
+        <a href="https://apps.apple.com/tw/app/%E6%B0%B8%E8%88%88e%E8%AD%89%E5%88%B8/id1020553624" target="_blank" class="btn-secondary" id="hero-btn-app">
+          <i class="fas fa-mobile-screen"></i> 下載 APP
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num" data-target="30">0</span><span class="stat-unit">+</span>
+          <span class="stat-label">年市場經驗</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="10">0</span><span class="stat-unit">萬+</span>
+          <span class="stat-label">客戶信任</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="24">0</span><span class="stat-unit">小時</span>
+          <span class="stat-label">線上服務</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" id="hero-scroll">
+      <span>向下探索</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK ACCESS CARDS ===== -->
+  <section class="quick-access" id="quick-access">
+    <div class="container">
+      <div class="quick-grid">
+        <a href="https://apps.apple.com/tw/app/%E6%B0%B8%E8%88%88e%E8%AD%89%E5%88%B8/id1020553624" target="_blank" class="quick-card" id="quick-ios">
+          <div class="quick-icon">
+            <i class="fab fa-apple"></i>
+          </div>
+          <div class="quick-info">
+            <h3>永興 e 證券</h3>
+            <p>iOS App Store</p>
+          </div>
+          <i class="fas fa-arrow-right quick-arrow"></i>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.yungshin.securities.mBroker" target="_blank" class="quick-card" id="quick-android">
+          <div class="quick-icon">
+            <i class="fab fa-google-play"></i>
+          </div>
+          <div class="quick-info">
+            <h3>永興 e 證券</h3>
+            <p>Android Google Play</p>
+          </div>
+          <i class="fas fa-arrow-right quick-arrow"></i>
+        </a>
+        <a href="https://www.twse.com.tw/zh/trading/historical/mi-stock20.html" target="_blank" class="quick-card" id="quick-twse">
+          <div class="quick-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="quick-info">
+            <h3>上市熱門股</h3>
+            <p>進出排行榜</p>
+          </div>
+          <i class="fas fa-arrow-right quick-arrow"></i>
+        </a>
+        <a href="https://bsr.twse.com.tw/bshtm/" target="_blank" class="quick-card" id="quick-broker">
+          <div class="quick-icon">
+            <i class="fas fa-building-columns"></i>
+          </div>
+          <div class="quick-info">
+            <h3>券商進出排行</h3>
+            <p>即時市場數據</p>
+          </div>
+          <i class="fas fa-arrow-right quick-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS SECTION ===== -->
+  <section class="news-section section" id="news-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">NEWS</div>
+        <h2 class="section-title">最新消息</h2>
+        <p class="section-sub">掌握最新金融法規與市場資訊</p>
+        <a href="news.html" class="section-more" id="news-more-link">
+          查看全部 <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="news-grid">
+        <article class="news-card featured" id="news-card-1">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2026-03-17</span>
+            <span class="news-badge">重要公告</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=73" target="_blank">
+              內政部「外來人口統一證號」辦理資料變更相關事宜
+            </a>
+          </h3>
+          <p class="news-excerpt">配合內政部移民署辦理外來人口統一證號整合作業，相關客戶需辦理資料變更，請詳閱公告內容...</p>
+          <a href="https://www.yss.com.tw/news-detail.php?id=73" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+        <article class="news-card" id="news-card-2">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2025-11-18</span>
+            <span class="news-badge new">新規定</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=72" target="_blank">
+              自114年11月17日起，創新板上市股票可進行當日沖銷交易
+            </a>
+          </h3>
+          <a href="https://www.yss.com.tw/news-detail.php?id=72" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+        <article class="news-card" id="news-card-3">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2025-09-30</span>
+            <span class="news-badge">活動資訊</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=70" target="_blank">
+              114 年度防制金融投資詐騙線上遊戲獎勵活動訊息
+            </a>
+          </h3>
+          <a href="https://www.yss.com.tw/news-detail.php?id=70" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+        <article class="news-card" id="news-card-4">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2025-09-30</span>
+            <span class="news-badge">交易資訊</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=71" target="_blank">
+              「黃金現貨交易平台專區」交易新制相關資訊
+            </a>
+          </h3>
+          <a href="https://www.yss.com.tw/news-detail.php?id=71" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+        <article class="news-card" id="news-card-5">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2025-07-21</span>
+            <span class="news-badge">教育資源</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=68" target="_blank">
+              主動式ETF暨被動式多資產ETF教育網站
+            </a>
+          </h3>
+          <a href="https://www.yss.com.tw/news-detail.php?id=68" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+        <article class="news-card" id="news-card-6">
+          <div class="news-meta">
+            <span class="news-date"><i class="fas fa-calendar"></i> 2025-02-14</span>
+            <span class="news-badge">作業調整</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.yss.com.tw/news-detail.php?id=67" target="_blank">
+              期貨交易人買賣對帳單之寄送改為每月10日前
+            </a>
+          </h3>
+          <a href="https://www.yss.com.tw/news-detail.php?id=67" target="_blank" class="news-read-more">
+            閱讀全文 <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRADE RANKING & LINKS ===== -->
+  <section class="info-section section" id="info-section">
+    <div class="container">
+      <div class="info-grid">
+
+        <!-- Trade Ranking -->
+        <div class="info-card" id="trade-ranking-card">
+          <div class="info-card-header">
+            <div class="info-icon">
+              <i class="fas fa-ranking-star"></i>
+            </div>
+            <div>
+              <div class="section-tag small">RANKING</div>
+              <h2 class="info-card-title">交易排行</h2>
+            </div>
+            <a href="https://bsr.twse.com.tw/bshtm/" target="_blank" class="info-more">查看更多 →</a>
+          </div>
+          <ul class="info-list" id="trade-ranking-list">
+            <li class="info-list-item">
+              <span class="info-rank">01</span>
+              <div class="info-list-content">
+                <a href="https://www.twse.com.tw/zh/trading/historical/mi-stock20.html" target="_blank" id="rank-link-1">
+                  <i class="fas fa-arrow-trend-up"></i> 上市 — 熱門股進出排行
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank">02</span>
+              <div class="info-list-content">
+                <a href="https://www.tpex.org.tw/zh-tw/mainboard/trading/historical/rank-volume/day.html" target="_blank" id="rank-link-2">
+                  <i class="fas fa-arrow-trend-up"></i> 上櫃 — 熱門股進出排行
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank">03</span>
+              <div class="info-list-content">
+                <a href="https://bsr.twse.com.tw/bshtm/" target="_blank" id="rank-link-3">
+                  <i class="fas fa-chart-bar"></i> 上市 — 券商進出排行
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank">04</span>
+              <div class="info-list-content">
+                <a href="https://www.tpex.org.tw/zh-tw/mainboard/trading/realtime/broker-vol.html" target="_blank" id="rank-link-4">
+                  <i class="fas fa-chart-bar"></i> 上櫃 — 券商進出排行
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Related Links -->
+        <div class="info-card" id="related-links-card">
+          <div class="info-card-header">
+            <div class="info-icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <div>
+              <div class="section-tag small">LINKS</div>
+              <h2 class="info-card-title">相關連結</h2>
+            </div>
+            <a href="links.html" class="info-more">查看更多 →</a>
+          </div>
+          <ul class="info-list" id="related-links-list">
+            <li class="info-list-item">
+              <span class="info-rank link-icon"><i class="fas fa-gavel"></i></span>
+              <div class="info-list-content">
+                <a href="https://front.sfipc.org.tw/?language=zhTW" target="_blank" id="rel-link-1">
+                  投資人團體訴訟求償登記受理服務
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank link-icon"><i class="fas fa-heart"></i></span>
+              <div class="info-list-content">
+                <a href="https://www.yss.com.tw/news-detail.php?id=15" target="_blank" id="rel-link-2">
+                  永興證券金融友善服務專區
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank link-icon"><i class="fab fa-apple"></i></span>
+              <div class="info-list-content">
+                <a href="https://apps.apple.com/tw/app/%E6%B0%B8%E8%88%88e%E8%AD%89%E5%88%B8/id1020553624" target="_blank" id="rel-link-3">
+                  永興 e 證券 — iOS 版
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank link-icon"><i class="fab fa-android"></i></span>
+              <div class="info-list-content">
+                <a href="https://play.google.com/store/apps/details?id=com.yungshin.securities.mBroker" target="_blank" id="rel-link-4">
+                  永興 e 證券 — Android 版
+                </a>
+              </div>
+            </li>
+            <li class="info-list-item">
+              <span class="info-rank link-icon"><i class="fas fa-scale-balanced"></i></span>
+              <div class="info-list-content">
+                <a href="https://www.foi.org.tw/index.html" target="_blank" id="rel-link-5">
+                  金融消費爭議處理專區
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services-section section" id="services-section">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-tag">SERVICES</div>
+        <h2 class="section-title">我們的服務</h2>
+        <p class="section-sub">全方位金融服務，滿足您的投資需求</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" id="service-stock">
+          <div class="service-icon-wrap">
+            <i class="fas fa-chart-candlestick"></i>
+          </div>
+          <h3>股票交易</h3>
+          <p>上市、上櫃、興櫃股票，提供即時行情與便捷的線上下單服務</p>
+        </div>
+        <div class="service-card" id="service-futures">
+          <div class="service-icon-wrap">
+            <i class="fas fa-chart-area"></i>
+          </div>
+          <h3>期貨交易</h3>
+          <p>台指期、小台指、股票期貨等多元期貨商品，靈活操作策略</p>
+        </div>
+        <div class="service-card" id="service-etf">
+          <div class="service-icon-wrap">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>ETF 投資</h3>
+          <p>主動式與被動式 ETF，分散風險，穩健累積資產</p>
+        </div>
+        <div class="service-card" id="service-mobile">
+          <div class="service-icon-wrap">
+            <i class="fas fa-mobile-screen-button"></i>
+          </div>
+          <h3>行動交易</h3>
+          <p>永興 e 證券 APP，隨時隨地掌握市場，輕鬆管理您的投資組合</p>
+        </div>
+        <div class="service-card" id="service-research">
+          <div class="service-icon-wrap">
+            <i class="fas fa-magnifying-glass-chart"></i>
+          </div>
+          <h3>市場研究</h3>
+          <p>專業研究報告與市場分析，助您做出更明智的投資決策</p>
+        </div>
+        <div class="service-card" id="service-support">
+          <div class="service-icon-wrap">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>客戶服務</h3>
+          <p>專業客服團隊全天候服務，解答您的疑問，保障您的權益</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUSTAINABILITY ===== -->
+  <section class="sustain-section section" id="sustain-section">
+    <div class="container">
+      <div class="sustain-inner">
+        <div class="sustain-content">
+          <div class="section-tag">ESG</div>
+          <h2 class="section-title light">永續發展專區</h2>
+          <p class="sustain-desc">
+            永興證券致力於企業永續發展，積極落實 ESG 理念，推動環境保護、社會責任與公司治理，共同打造更美好的金融生態。
+          </p>
+          <div class="sustain-links">
+            <a href="https://www.yss.com.tw/upload/20260225131413.pdf" target="_blank" class="sustain-link" id="sustain-report">
+              <i class="fas fa-file-pdf"></i>
+              <div>
+                <strong>2026 永續發展報告書</strong>
+                <span>下載 PDF</span>
+              </div>
+              <i class="fas fa-download sustain-dl"></i>
+            </a>
+            <a href="https://www.yss.com.tw/develop-detail.php?id=18" target="_blank" class="sustain-link" id="sustain-governance">
+              <i class="fas fa-landmark"></i>
+              <div>
+                <strong>永興證券治理實務守則</strong>
+                <span>公司治理文件</span>
+              </div>
+              <i class="fas fa-external-link sustain-dl"></i>
+            </a>
+            <a href="https://www.yss.com.tw/develop-detail.php?id=19" target="_blank" class="sustain-link" id="sustain-climate">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <strong>氣候變遷風險管理</strong>
+                <span>環境責任實踐</span>
+              </div>
+              <i class="fas fa-external-link sustain-dl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="sustain-visual">
+          <div class="sustain-ring">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="sustain-center-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+          </div>
+          <div class="sustain-badges">
+            <div class="sustain-badge" id="badge-e">
+              <span class="badge-letter">E</span>
+              <span class="badge-word">環境</span>
+            </div>
+            <div class="sustain-badge" id="badge-s">
+              <span class="badge-letter">S</span>
+              <span class="badge-word">社會</span>
+            </div>
+            <div class="sustain-badge" id="badge-g">
+              <span class="badge-letter">G</span>
+              <span class="badge-word">治理</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANTIFRAUD BANNER ===== -->
+  <section class="antifraud-section" id="antifraud-section">
+    <div class="container">
+      <div class="antifraud-inner">
+        <div class="antifraud-icon">
+          <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <div class="antifraud-content">
+          <h3>反詐騙專區</h3>
+          <p>請提高警覺！不法人士可能假冒永興證券名義進行詐騙，請務必透過官方管道確認身分。如有疑慮，請立即聯繫我們的客服。</p>
+        </div>
+        <a href="https://www.yss.com.tw/antifraud.php" target="_blank" class="btn-antifraud" id="antifraud-btn">
+          了解更多 <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon small">
+              <span class="logo-char">永</span>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">永興證券</span>
+              <span class="logo-sub">YSS Securities Co., Ltd.</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">深耕台灣資本市場數十年<br>您值得信賴的投資夥伴</p>
+          <div class="footer-contact">
+            <div class="footer-contact-item">
+              <i class="fas fa-location-dot"></i>
+              <span>台北市中正區南海路 20 號 2 樓</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone"></i>
+              <span>(02) 2321-8200</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-fax"></i>
+              <span>(02) 2393-4894</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:service@yss.com.tw">service@yss.com.tw</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">關於我們</h4>
+          <ul class="footer-nav-list">
+            <li><a href="about.html" id="footer-about">關於永興</a></li>
+            <li><a href="develop.html" id="footer-develop">永續發展專區</a></li>
+            <li><a href="antifraud.html" id="footer-antifraud">反詐騙專區</a></li>
+            <li><a href="privacy.html" id="footer-privacy">隱私權保護</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">投資資訊</h4>
+          <ul class="footer-nav-list">
+            <li><a href="news.html" id="footer-news">最新消息</a></li>
+            <li><a href="https://www.twse.com.tw" target="_blank" id="footer-stock">股市資訊</a></li>
+            <li><a href="trade-ranking.html" id="footer-trade">交易排行</a></li>
+            <li><a href="links.html" id="footer-links">相關連結</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">客戶服務</h4>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:service@yss.com.tw" id="footer-email">客服信箱</a></li>
+            <li><a href="https://apps.apple.com/tw/app/%E6%B0%B8%E8%88%88e%E8%AD%89%E5%88%B8/id1020553624" target="_blank" id="footer-ios">下載 iOS APP</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.yungshin.securities.mBroker" target="_blank" id="footer-android">下載 Android APP</a></li>
+            <li><a href="https://www.foi.org.tw/index.html" target="_blank" id="footer-foi">金融消費爭議</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 永興證券股份有限公司　All Rights Reserved.</p>
+        <p class="footer-legal">本網站所登載之文章係屬本公司版權所有，非經本公司同意，禁止拷貝、轉載等非授權使用。</p>
+        <p class="footer-browser-note">建議使用 Chrome、Edge 最新版本以獲得最佳瀏覽體驗</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scroll-top-btn" aria-label="回到頂部">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

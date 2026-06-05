@@ -3,251 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="了解永興證券的歷史、使命、企業文化與服務理念，我們致力於為客戶提供專業、安全的金融服務。">
+  <meta name="description" content="了解永興證券的歷史、使命與服務理念，台北市中正區南海路20號2樓，(02)2321-8200。">
   <title>關於永興 | 永興證券</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero {
-      padding: 160px 0 80px;
-      background: linear-gradient(135deg, var(--navy-darkest) 0%, var(--navy-mid) 100%);
-      border-bottom: 1px solid var(--glass-border);
-      position: relative;
-      overflow: hidden;
+    .page-banner {
+      background: var(--yss-blue);
+      padding: 48px 32px;
+      border-bottom: 4px solid var(--yss-orange);
     }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(212,168,67,0.06) 0%, transparent 70%);
+    .page-banner-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
-    .page-hero-content { position: relative; z-index: 1; }
-    .page-hero-content h1 {
-      font-size: clamp(36px, 5vw, 60px);
+    .page-banner h1 {
+      font-size: clamp(22px,3vw,36px);
       font-weight: 900;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: 0.03em;
     }
-    .page-hero-content p {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 560px;
-    }
-    .about-section { padding: 96px 0; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-    .about-grid.reverse { direction: rtl; }
-    .about-grid.reverse > * { direction: ltr; }
-    .about-text h2 {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
-    .about-text p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.9;
+    .page-banner p { font-size:14px; color:rgba(255,255,255,0.55); }
+    .page-banner .breadcrumb {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
       margin-bottom: 12px;
     }
-    .about-visual {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+    .page-banner .breadcrumb a { color: var(--yss-orange); }
+
+    .about-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      padding: 40px 40px 56px;
     }
-    .value-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .value-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: var(--navy-darkest);
-      flex-shrink: 0;
-    }
-    .value-text h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .value-text p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .contact-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 48px;
+    .about-intro {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--gray-100);
+      align-items: start;
     }
-    .contact-item { text-align: center; }
-    .contact-item i {
-      font-size: 32px;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .contact-item h3 {
-      font-size: 14px;
+    .about-intro h2 {
+      font-size: 20px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
+      color: var(--yss-blue);
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 4px solid var(--yss-orange);
+    }
+    .about-intro p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.9;
+      margin-bottom: 10px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
+    }
+    .value-card {
+      padding: 20px;
+      background: var(--gray-100);
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--yss-orange);
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      background: #fff8ee;
+      border-left-color: var(--yss-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .value-card i {
+      font-size: 20px;
+      color: var(--yss-orange);
       margin-bottom: 8px;
     }
-    .contact-item p, .contact-item a {
-      font-size: 15px;
-      color: var(--text-primary);
+    .value-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--yss-blue);
+      margin-bottom: 6px;
     }
-    .contact-item a:hover { color: var(--gold); }
-    @media (max-width: 768px) {
-      .about-grid, .about-grid.reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
-      .contact-card { grid-template-columns: 1fr; }
+    .value-card p { font-size: 13px; color: var(--gray-500); line-height:1.7; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+    .contact-card-item {
+      padding: 24px 20px;
+      background: var(--yss-blue);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    .contact-card-item i { font-size:24px; color:var(--yss-orange); margin-bottom:10px; }
+    .contact-card-item h3 {
+      font-size:11px; font-weight:700; letter-spacing:0.15em;
+      text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px;
+    }
+    .contact-card-item p, .contact-card-item a {
+      font-size:14px; color:#fff; line-height:1.7;
+    }
+    .contact-card-item a:hover { color:var(--yss-gold); }
+
+    @media(max-width:768px){
+      .about-intro { grid-template-columns:1fr; gap:24px; }
+      .values-grid { grid-template-columns:1fr; }
+      .contact-grid { grid-template-columns:1fr; }
+      .about-body { padding:24px 16px 36px; }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar scrolled" id="navbar">
-    <div class="nav-container">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
       <a href="index.html" class="nav-logo" id="nav-logo-link">
-        <div class="logo-icon"><span class="logo-char">永</span></div>
-        <div class="logo-text">
+        <div class="logo-text-wrap">
           <span class="logo-main">永興證券</span>
           <span class="logo-sub">YSS Securities</span>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="about.html" class="nav-link" style="color:var(--gold)" id="nav-about">關於永興</a></li>
-        <li><a href="news.html" class="nav-link" id="nav-news">最新消息</a></li>
-        <li><a href="https://www.twse.com.tw" target="_blank" class="nav-link" id="nav-stock">股市資訊</a></li>
-        <li><a href="index.html#info-section" class="nav-link" id="nav-trade">交易排行</a></li>
-        <li><a href="index.html#info-section" class="nav-link" id="nav-links">相關連結</a></li>
-        <li><a href="mailto:service@yss.com.tw" class="nav-link nav-cta" id="nav-contact"><i class="fas fa-envelope"></i> 客服信箱</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-links">
+        <div class="nav-divider"></div>
+        <a href="about.html" class="nav-link active" id="nav-about">關於永興</a>
+        <div class="nav-divider"></div>
+        <a href="news.html"  class="nav-link" id="nav-news">最新消息</a>
+        <div class="nav-divider"></div>
+        <a href="https://www.twse.com.tw" target="_blank" class="nav-link" id="nav-stock">股市資訊</a>
+        <div class="nav-divider"></div>
+        <a href="index.html#trade-section" class="nav-link" id="nav-trade">交易排行</a>
+        <div class="nav-divider"></div>
+        <a href="index.html#links-section" class="nav-link" id="nav-links">相關連結</a>
+        <div class="nav-divider"></div>
+        <a href="mailto:service@yss.com.tw" class="nav-link nav-contact" id="nav-contact">
+          <i class="fas fa-envelope" style="font-size:13px;margin-right:5px"></i>客服信箱
+        </a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="about.html">關於永興</a>
+      <a href="news.html">最新消息</a>
+      <a href="index.html">回首頁</a>
+      <a href="mailto:service@yss.com.tw">客服信箱</a>
     </div>
   </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <ul>
-      <li><a href="about.html">關於永興</a></li>
-      <li><a href="news.html">最新消息</a></li>
-      <li><a href="index.html">回首頁</a></li>
-      <li><a href="mailto:service@yss.com.tw">客服信箱</a></li>
-    </ul>
+
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="breadcrumb"><a href="index.html">首頁</a> › 關於永興</div>
+      <h1>關於永興證券</h1>
+      <p>深耕台灣資本市場，以誠信、專業、創新為核心</p>
+    </div>
   </div>
 
-  <section class="page-hero">
-    <div class="container page-hero-content">
-      <div class="section-tag">ABOUT US</div>
-      <h1>關於永興證券</h1>
-      <p>深耕台灣資本市場數十年，以誠信、專業、創新為核心，持續為客戶創造最大價值</p>
-    </div>
-  </section>
-
-  <section class="about-section" style="background:var(--navy-dark)">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <div class="section-tag">OUR STORY</div>
+  <div style="background:var(--gray-100);padding:32px 20px">
+    <div class="about-body">
+      <div class="about-intro">
+        <div>
           <h2>我們的故事</h2>
-          <p>永興證券股份有限公司，成立於台灣，長期致力於提供優質的證券金融服務。我們以客戶利益為優先，透過專業的市場分析與完善的交易平台，協助投資人在瞬息萬變的金融市場中把握機會。</p>
+          <p>永興證券股份有限公司，長期致力於提供優質的證券金融服務，以客戶利益為優先，透過專業的市場分析與完善的交易平台，協助投資人在瞬息萬變的金融市場中把握機會。</p>
           <p>從傳統的實體營業據點到現代化的行動交易平台，永興證券始終走在時代前沿，不斷引進最新科技，讓投資更便利、更安全、更有效率。</p>
           <p>我們相信，優秀的證券公司不只是交易的媒介，更是投資人可以信賴的長期夥伴。</p>
         </div>
-        <div class="about-visual">
-          <div class="value-item">
-            <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
-            <div class="value-text">
+        <div>
+          <h2>核心價值</h2>
+          <div class="values-grid">
+            <div class="value-card fade-up">
+              <i class="fas fa-shield-halved"></i>
               <h3>誠信可靠</h3>
-              <p>以誠信為本，嚴格遵守相關法規，保障客戶資產安全</p>
+              <p>嚴格遵守相關法規，保障客戶資產安全</p>
             </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-            <div class="value-text">
+            <div class="value-card fade-up d1">
+              <i class="fas fa-lightbulb"></i>
               <h3>專業創新</h3>
-              <p>持續投入研發，提供業界領先的交易工具與市場分析</p>
+              <p>持續投入研發，提供領先的交易工具</p>
             </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon"><i class="fas fa-handshake"></i></div>
-            <div class="value-text">
+            <div class="value-card fade-up d2">
+              <i class="fas fa-handshake"></i>
               <h3>客戶至上</h3>
-              <p>以客戶需求為核心，提供貼心、即時的全方位服務</p>
+              <p>以客戶需求為核心，提供貼心全方位服務</p>
             </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon"><i class="fas fa-earth-asia"></i></div>
-            <div class="value-text">
+            <div class="value-card fade-up d3">
+              <i class="fas fa-earth-asia"></i>
               <h3>永續發展</h3>
-              <p>積極落實 ESG，關注環境、社會責任與公司治理</p>
+              <p>積極落實 ESG，關注環境與社會責任</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="contact-card">
-        <div class="contact-item">
+      <h2 style="font-size:20px;font-weight:700;color:var(--yss-blue);margin-bottom:20px;padding-left:12px;border-left:4px solid var(--yss-orange)">聯絡資訊</h2>
+      <div class="contact-grid">
+        <div class="contact-card-item fade-up">
           <i class="fas fa-location-dot"></i>
           <h3>地址</h3>
           <p>台北市中正區<br>南海路 20 號 2 樓</p>
         </div>
-        <div class="contact-item">
+        <div class="contact-card-item fade-up d1">
           <i class="fas fa-phone"></i>
-          <h3>電話</h3>
-          <p>(02) 2321-8200</p>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:4px">傳真：(02) 2393-4894</p>
+          <h3>電話 / 傳真</h3>
+          <p>(02) 2321-8200<br><span style="font-size:12px;opacity:0.6">傳真：(02) 2393-4894</span></p>
         </div>
-        <div class="contact-item">
+        <div class="contact-card-item fade-up d2">
           <i class="fas fa-envelope"></i>
           <h3>客服信箱</h3>
-          <a href="mailto:service@yss.com.tw">service@yss.com.tw</a>
+          <a href="mailto:service@yss.com.tw" id="about-email">service@yss.com.tw</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-bottom" style="padding-top:40px">
-        <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:16px">
-          <div class="logo-icon small"><span class="logo-char">永</span></div>
-          <span style="font-size:16px;font-weight:700">永興證券</span>
-        </a>
-        <p>© 2026 永興證券股份有限公司　All Rights Reserved.</p>
-        <p class="footer-legal">ADD：台北市中正區南海路 20 號 2 樓　TEL：(02) 2321-8200　E-mail：service@yss.com.tw</p>
+  <footer id="footer">
+    <nav class="footer-nav">
+      <div class="footer-nav-inner">
+        <a href="about.html"   class="footer-nav-link">關於永興</a>
+        <a href="news.html"    class="footer-nav-link">最新消息</a>
+        <a href="index.html#trade-section" class="footer-nav-link">交易排行</a>
+        <a href="index.html#links-section" class="footer-nav-link">相關連結</a>
+        <a href="mailto:service@yss.com.tw" class="footer-nav-link">客服信箱</a>
+        <a href="privacy.html" class="footer-nav-link">隱私權保護</a>
+        <a href="develop.html" class="footer-nav-link">永續發展專區</a>
+        <a href="antifraud.html" class="footer-nav-link">反詐騙專區</a>
+      </div>
+    </nav>
+    <div class="footer-copyright">
+      <div class="footer-copyright-inner">
+        <div>© 2026 永興證券股份有限公司　台北市中正區南海路 20 號 2 樓　(02) 2321-8200　service@yss.com.tw</div>
+        <div class="legal">永興證券理財網站所登載之文章係屬本公司版權所有，非經本公司同意，禁止拷貝、轉載等非授權使用。</div>
       </div>
     </div>
   </footer>
-
   <button class="scroll-top" id="scroll-top-btn" aria-label="回到頂部"><i class="fas fa-chevron-up"></i></button>
   <script src="script.js"></script>
 </body>

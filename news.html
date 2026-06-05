@@ -6,235 +6,201 @@
   <meta name="description" content="永興證券最新消息 — 掌握最新金融法規、市場動態與公司公告。">
   <title>最新消息 | 永興證券</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero {
-      padding: 160px 0 80px;
-      background: linear-gradient(135deg, var(--navy-darkest), var(--navy-mid));
-      border-bottom: 1px solid var(--glass-border);
-      position: relative;
+    .page-banner {
+      background: var(--yss-blue);
+      padding: 48px 32px;
+      border-bottom: 4px solid var(--yss-orange);
     }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(30,144,255,0.05), transparent 60%);
+    .page-banner-inner { max-width: var(--max-width); margin: 0 auto; }
+    .page-banner h1 {
+      font-size: clamp(22px,3vw,36px); font-weight:900; color:#fff;
+      margin-bottom:6px; letter-spacing:0.03em;
     }
-    .page-hero-content { position: relative; z-index: 1; }
-    .page-hero-content h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
+    .page-banner p { font-size:14px; color:rgba(255,255,255,0.55); }
+    .page-banner .breadcrumb {
+      font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:12px;
     }
-    .page-hero-content p { font-size: 18px; color: var(--text-muted); }
+    .page-banner .breadcrumb a { color:var(--yss-orange); }
 
-    .news-page { padding: 80px 0; background: var(--navy-dark); }
-
-    .news-full-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .news-page-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      padding: 40px 40px 56px;
     }
-
-    .news-card-full {
-      background: rgba(13,33,64,0.5);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-md);
-      padding: 28px;
+    .news-full-list { margin-top: 8px; }
+    .news-full-item {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
-    .news-card-full::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--accent-blue));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .news-card-full:hover {
-      border-color: rgba(212,168,67,0.2);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-      background: rgba(13,33,64,0.8);
-    }
-    .news-card-full:hover::after { transform: scaleX(1); }
+    .news-full-item:last-child { border-bottom: none; }
+    .news-full-item:hover { background: #fffdf5; padding-left: 10px; }
 
-    .news-back {
+    .news-full-item .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--yss-orange);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .news-full-item .title {
+      flex: 1;
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+    .news-full-item:hover .title { color: var(--yss-blue); }
+    .news-full-item .date {
+      font-size: 12px;
+      color: var(--yss-red);
+      flex-shrink: 0;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 48px;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 24px;
       transition: var(--transition);
     }
-    .news-back:hover { color: var(--gold); }
+    .back-link:hover { color: var(--yss-blue); }
 
-    @media (max-width: 768px) {
-      .news-full-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 1024px) {
-      .news-full-grid { grid-template-columns: repeat(2, 1fr); }
+    @media(max-width:768px){
+      .news-page-body { padding: 24px 16px 36px; }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar scrolled" id="navbar">
-    <div class="nav-container">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
       <a href="index.html" class="nav-logo" id="nav-logo-link">
-        <div class="logo-icon"><span class="logo-char">永</span></div>
-        <div class="logo-text">
+        <div class="logo-text-wrap">
           <span class="logo-main">永興證券</span>
           <span class="logo-sub">YSS Securities</span>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="about.html" class="nav-link" id="nav-about">關於永興</a></li>
-        <li><a href="news.html" class="nav-link" style="color:var(--gold)" id="nav-news">最新消息</a></li>
-        <li><a href="https://www.twse.com.tw" target="_blank" class="nav-link" id="nav-stock">股市資訊</a></li>
-        <li><a href="index.html#info-section" class="nav-link" id="nav-trade">交易排行</a></li>
-        <li><a href="index.html#info-section" class="nav-link" id="nav-links">相關連結</a></li>
-        <li><a href="mailto:service@yss.com.tw" class="nav-link nav-cta" id="nav-contact"><i class="fas fa-envelope"></i> 客服信箱</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-links">
+        <div class="nav-divider"></div>
+        <a href="about.html" class="nav-link" id="nav-about">關於永興</a>
+        <div class="nav-divider"></div>
+        <a href="news.html"  class="nav-link active" id="nav-news">最新消息</a>
+        <div class="nav-divider"></div>
+        <a href="https://www.twse.com.tw" target="_blank" class="nav-link" id="nav-stock">股市資訊</a>
+        <div class="nav-divider"></div>
+        <a href="index.html#trade-section" class="nav-link" id="nav-trade">交易排行</a>
+        <div class="nav-divider"></div>
+        <a href="index.html#links-section" class="nav-link" id="nav-links">相關連結</a>
+        <div class="nav-divider"></div>
+        <a href="mailto:service@yss.com.tw" class="nav-link nav-contact" id="nav-contact">
+          <i class="fas fa-envelope" style="font-size:13px;margin-right:5px"></i>客服信箱
+        </a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="about.html">關於永興</a>
+      <a href="news.html">最新消息</a>
+      <a href="index.html">回首頁</a>
+      <a href="mailto:service@yss.com.tw">客服信箱</a>
     </div>
   </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <ul>
-      <li><a href="about.html">關於永興</a></li>
-      <li><a href="news.html">最新消息</a></li>
-      <li><a href="index.html">回首頁</a></li>
-      <li><a href="mailto:service@yss.com.tw">客服信箱</a></li>
-    </ul>
-  </div>
 
-  <section class="page-hero">
-    <div class="container page-hero-content">
-      <div class="section-tag">LATEST NEWS</div>
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="breadcrumb"><a href="index.html">首頁</a> › 最新消息</div>
       <h1>最新消息</h1>
       <p>掌握最新金融法規、市場動態與公司公告</p>
     </div>
-  </section>
+  </div>
 
-  <section class="news-page">
-    <div class="container">
-      <a href="index.html" class="news-back"><i class="fas fa-arrow-left"></i> 返回首頁</a>
-      <div class="news-full-grid">
+  <div style="background:var(--gray-100);padding:32px 20px">
+    <div class="news-page-body">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首頁</a>
 
-        <article class="news-card-full" id="news-article-1">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2026-03-17</span>
-            <span class="news-badge">重要公告</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=73" target="_blank">
-              內政部「外來人口統一證號」辦理資料變更相關事宜
-            </a>
-          </h3>
-          <p class="news-excerpt">配合內政部移民署辦理外來人口統一證號整合作業，相關客戶需辦理資料變更，請詳閱公告內容並儘速辦理。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=73" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
-        <article class="news-card-full" id="news-article-2">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2025-11-18</span>
-            <span class="news-badge new">新規定</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=72" target="_blank">
-              自114年11月17日起，創新板上市股票可進行當日沖銷交易
-            </a>
-          </h3>
-          <p class="news-excerpt">依據主管機關規定，創新板上市股票自114年11月17日起開放當日沖銷交易，提供投資人更靈活的交易策略選擇。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=72" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
-        <article class="news-card-full" id="news-article-3">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2025-09-30</span>
-            <span class="news-badge">活動資訊</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=70" target="_blank">
-              114 年度防制金融投資詐騙線上遊戲獎勵活動訊息
-            </a>
-          </h3>
-          <p class="news-excerpt">響應主管機關防詐騙宣導，參與線上遊戲活動，提升投資人金融安全意識，並有機會獲得獎勵。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=70" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
-        <article class="news-card-full" id="news-article-4">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2025-09-30</span>
-            <span class="news-badge">交易資訊</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=71" target="_blank">
-              「黃金現貨交易平台專區」交易新制相關資訊
-            </a>
-          </h3>
-          <p class="news-excerpt">黃金現貨交易平台推出交易新制，相關規定與操作方式已更新，請投資人詳細閱讀最新規定。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=71" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
-        <article class="news-card-full" id="news-article-5">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2025-07-21</span>
-            <span class="news-badge">教育資源</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=68" target="_blank">
-              主動式ETF暨被動式多資產ETF教育網站
-            </a>
-          </h3>
-          <p class="news-excerpt">台灣證券交易所推出主動式ETF暨被動式多資產ETF教育網站，提供投資人完整的ETF知識學習資源。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=68" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
-        <article class="news-card-full" id="news-article-6">
-          <div class="news-meta">
-            <span class="news-date"><i class="fas fa-calendar"></i> 2025-02-14</span>
-            <span class="news-badge">作業調整</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.yss.com.tw/news-detail.php?id=67" target="_blank">
-              期貨交易人買賣對帳單之寄送改為每月10日前
-            </a>
-          </h3>
-          <p class="news-excerpt">為提升服務效率，期貨交易人買賣對帳單寄送時間調整為每月10日前，請客戶留意收件。</p>
-          <a href="https://www.yss.com.tw/news-detail.php?id=67" target="_blank" class="news-read-more">閱讀全文 <i class="fas fa-arrow-right"></i></a>
-        </article>
-
+      <div class="section-title-bar news" style="margin-bottom:0">
+        <h2>全部消息</h2>
       </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom" style="padding-top:40px">
-        <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:16px">
-          <div class="logo-icon small"><span class="logo-char">永</span></div>
-          <span style="font-size:16px;font-weight:700">永興證券</span>
-        </a>
-        <p>© 2026 永興證券股份有限公司　All Rights Reserved.</p>
-        <p class="footer-legal">ADD：台北市中正區南海路 20 號 2 樓　TEL：(02) 2321-8200　E-mail：service@yss.com.tw</p>
+      <ul class="news-full-list">
+        <li class="news-full-item fade-up">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=73" target="_blank" class="title" id="news-p-1">
+            內政部「外來人口統一證號」辦理資料變更相關事宜
+          </a>
+          <span class="date">2026-03-17</span>
+        </li>
+        <li class="news-full-item fade-up d1">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=72" target="_blank" class="title" id="news-p-2">
+            自114年11月17日起，創新板上市股票可進行當日沖銷交易
+          </a>
+          <span class="date">2025-11-18</span>
+        </li>
+        <li class="news-full-item fade-up d2">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=70" target="_blank" class="title" id="news-p-3">
+            114 年度防制金融投資詐騙線上遊戲獎勵活動訊息
+          </a>
+          <span class="date">2025-09-30</span>
+        </li>
+        <li class="news-full-item fade-up d1">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=71" target="_blank" class="title" id="news-p-4">
+            「黃金現貨交易平台專區」交易新制相關資訊
+          </a>
+          <span class="date">2025-09-30</span>
+        </li>
+        <li class="news-full-item fade-up d2">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=68" target="_blank" class="title" id="news-p-5">
+            主動式ETF暨被動式多資產ETF教育網站
+          </a>
+          <span class="date">2025-07-21</span>
+        </li>
+        <li class="news-full-item fade-up d3">
+          <div class="dot"></div>
+          <a href="https://www.yss.com.tw/news-detail.php?id=67" target="_blank" class="title" id="news-p-6">
+            期貨交易人買賣對帳單之寄送改為每月10日前
+          </a>
+          <span class="date">2025-02-14</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <nav class="footer-nav">
+      <div class="footer-nav-inner">
+        <a href="about.html"   class="footer-nav-link">關於永興</a>
+        <a href="news.html"    class="footer-nav-link">最新消息</a>
+        <a href="index.html#trade-section" class="footer-nav-link">交易排行</a>
+        <a href="index.html#links-section" class="footer-nav-link">相關連結</a>
+        <a href="mailto:service@yss.com.tw" class="footer-nav-link">客服信箱</a>
+        <a href="privacy.html" class="footer-nav-link">隱私權保護</a>
+        <a href="develop.html" class="footer-nav-link">永續發展專區</a>
+        <a href="antifraud.html" class="footer-nav-link">反詐騙專區</a>
+      </div>
+    </nav>
+    <div class="footer-copyright">
+      <div class="footer-copyright-inner">
+        <div>© 2026 永興證券股份有限公司　台北市中正區南海路 20 號 2 樓　(02) 2321-8200</div>
+        <div class="legal">永興證券理財網站所登載之文章係屬本公司版權所有，非經本公司同意，禁止拷貝、轉載等非授權使用。</div>
       </div>
     </div>
   </footer>
-
   <button class="scroll-top" id="scroll-top-btn" aria-label="回到頂部"><i class="fas fa-chevron-up"></i></button>
   <script src="script.js"></script>
 </body>

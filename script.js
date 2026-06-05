@@ -6,15 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================
   // 1. 裝置偵測 — 依裝置顯示 App 下載按鈕
-  //    · iOS    → 顯示 App Store 按鈕
-  //    · Android→ 顯示 Google Play 按鈕
-  //    · 桌機PC → 兩個都不顯示
+  //    · iOS     → 顯示 App Store 按鈕
+  //    · Android → 顯示 Google Play 按鈕
+  //    · 桌機 PC → 兩個都不顯示
+  //
+  //  ★ 加強版偵測：同時比對 UA、touch points、platform
+  //    解決部分 Android 瀏覽器 UA 未含 "Android" 的誤判
   // =========================================================
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const ua       = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+  const platform = (navigator.platform || '').toLowerCase();
 
-  const isIOS     = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-  const isAndroid = /android/i.test(ua);
-  // 桌機：isMobile = false → 不顯示任何 app 按鈕
+  // iOS：iPhone / iPad / iPod（含 iPadOS 13+ 模擬桌機 UA 的特例）
+  const isIOS = (
+    /iphone|ipad|ipod/.test(ua) ||
+    // iPadOS 13+ 的 UA 變成 Mac，但有觸控且 platform 是 MacIntel
+    (platform === 'macintel' && navigator.maxTouchPoints > 1)
+  );
+
+  // Android：多重判斷
+  //  1. UA 含 "android"（大多數情況）
+  //  2. UA 含 "linux" + 有觸控 + 非桌機 platform（部分廠牌定製機）
+  const isAndroid = (
+    /android/.test(ua) ||
+    (!isIOS && /linux/.test(platform) && navigator.maxTouchPoints > 0 && !/win|mac/.test(platform))
+  );
 
   const btnIOS     = document.getElementById('btn-ios');
   const btnAndroid = document.getElementById('btn-android');
@@ -25,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (isAndroid) {
       btnAndroid.style.display = 'inline-flex';
     }
-    // 桌機：兩個按鈕都保持 display:none（HTML 預設已設好）
+    // 桌機：兩個按鈕都保持 display:none
   }
 
   // =========================================================

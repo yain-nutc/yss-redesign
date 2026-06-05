@@ -73,18 +73,16 @@ img { max-width:100%; display:block; }
   display: flex;
   align-items: center;
   background: var(--orange);
-  border-bottom: 5px solid var(--orange-dark);
-  padding: 0 20px;
-  min-height: 66px;
+  border-bottom: 7px solid var(--orange-dark);
+  padding: 15px 30px;
   flex-shrink: 0;
   transition: var(--transition);
-  gap: 8px; /* 縮小與文字間距 */
 }
 .nav-logo:hover { background: var(--orange-light); }
 
 /* 真實公司 Logo 圖片 */
 .logo-img {
-  height: 32px; /* 稍微放大以讓文字清晰 */
+  height: 42px; /* 完全符合原站大小 */
   width: auto;
   display: block;
   object-fit: contain;
